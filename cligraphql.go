@@ -46,16 +46,16 @@ func trafficDomainId(token string, zoneTag string, dategeq string, datelt string
 
 	if resp.StatusCode() == http.StatusOK {
 		result := resp.Result().(*graphResponse)
-
+		// Convert to json graphql data: ....
 		j, err := json.Marshal(result.Data)
 		if err != nil {
 			return 0, err
 		}
-
+		// parses the JSON-encoded data Viewer
 		if err := json.Unmarshal(j, &reeree); err != nil {
 			return 0, err
 		}
-
+		// to access HTTPRequests1DGroups
 		for _, z := range reeree.Viewer.Zones {
 			if len(z.HTTPRequests1DGroups) == 0 {
 				return 0, nil
