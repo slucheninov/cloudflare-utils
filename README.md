@@ -1,10 +1,15 @@
-# Cloudflare utils 
+# Cloudflare utils
+
+Only enterprise domain !
 
 ## Environment variable
 
+This API token will affect the below accounts and zones, along with their respective permissions
+
+- Account Analytics:Read
+- All zones - Zone Settings:Read, Zone:Read, Analytics:Read
+- All users - User Details:Read
+
 ```bash
-export CF_API_KEY=
-export CF_API_EMAIL=
-OR
 export CF_API_TOKEN=
 ```
