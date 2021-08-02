@@ -13,3 +13,9 @@ This API token will affect the below accounts and zones, along with their respec
 ```bash
 export CF_API_TOKEN=
 ```
+
+## Run examples
+
+```bash
+go run main.go -startDate=2021-08-01 -stopDate=2021-08-02
+```
