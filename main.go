@@ -5,12 +5,13 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"github.com/cloudflare/cloudflare-go"
-	"github.com/go-resty/resty"
 	"log"
 	"net/http"
 	"os"
 	"time"
+
+	"github.com/cloudflare/cloudflare-go"
+	"github.com/go-resty/resty"
 )
 
 var (
