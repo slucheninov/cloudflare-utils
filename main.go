@@ -115,6 +115,7 @@ func main() {
 	var idzone = make(map[string]string)
 	// Init all sum
 	var summa int64
+	var countDomain = 1
 	// Construct a new API object and get env api key
 	api, err := cloudflare.NewWithAPIToken(os.Getenv("CF_API_TOKEN"))
 	if err != nil {
@@ -142,13 +143,14 @@ func main() {
 	}
 	// Count bandwidth all domain
 	for id, domain := range idzone {
-		fmt.Printf("Domain: %v %v ", domain, id)
+		fmt.Printf("%v. domain: %v %v ", countDomain, domain, id)
 		s, err := trafficDomainId(os.Getenv("CF_API_TOKEN"), id, startDate, stopDate)
 		if err != nil {
 			log.Fatal(err)
 		}
 		summa = summa + s
 		fmt.Printf("%v \n", ByteCountIEC(s))
+		countDomain = countDomain + 1
 	}
 	fmt.Printf("Summa: %v \n", ByteCountIEC(summa))
 }
