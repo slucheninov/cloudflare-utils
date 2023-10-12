@@ -19,3 +19,4 @@ export CF_API_TOKEN=
 ```bash
 go run main.go -startDate=2021-08-01 -stopDate=2021-08-02
 ```
+test
